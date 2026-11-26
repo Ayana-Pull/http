@@ -15,7 +15,15 @@ class Libreria extends Controller
             'autor' => $autor
         ], 200);
     }
-    public function guardar(Request $request) {}
+    public function guardar(Request $request)
+    {
+        $titulo = $request->Json('titulo');
+        $autor = $request->Json('autor');
+        return response()->Json([
+            'titulo' => $titulo,
+            'autor' => $autor
+        ], 201);
+    }
     public function actualizar(Request $request, $id) {}
     public function eliminar($id) {}
     public function Mazivactualizacion(Request $request) {}
