@@ -7,5 +7,5 @@ use App\Http\Controllers\Libreria;
 Route::get('/libreria', [Libreria::class, 'listar']);
 Route::post('/libreria', [Libreria::class, 'guardar']);
 Route::put('/libreria', [Libreria::class, 'Mazivactualizacion']);
-Route::patch('/libreria/{id}', [Libreria::class, 'actualizar']);
+Route::patch('/libreria/{id}/titulo/{titulo}', [Libreria::class, 'actualizar']);
 Route::delete('/libreria/{id}', [Libreria::class, 'eliminar']);

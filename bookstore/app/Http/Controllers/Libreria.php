@@ -24,7 +24,15 @@ class Libreria extends Controller
             'autor' => $autor
         ], 201);
     }
-    public function actualizar(Request $request, $id) {}
+    public function actualizar(Request $request)
+    {
+        $id = $request->route('id');
+        $titulo = $request->route('titulo');
+        return response()->Json([
+            'id' => $id,
+            'titulo' => $titulo
+        ], 200);
+    }
     public function eliminar($id) {}
     public function Mazivactualizacion(Request $request) {}
 }
