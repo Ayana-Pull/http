@@ -15,8 +15,8 @@ class Libreria extends Controller
             'autor' => $autor
         ], 200);
     }
-    public function store(Request $request) {}
-    public function update(Request $request, $id) {}
-    public function destroy($id) {}
-    public function masiveupdate(Request $request) {}
+    public function guardar(Request $request) {}
+    public function actualizar(Request $request, $id) {}
+    public function eliminar($id) {}
+    public function Mazivactualizacion(Request $request) {}
 }
