@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Libreria extends Controller
 {
-    public function listar(Request $request)
+    public function listarLibros(Request $request)
     {
         $titulo = $request->input('titulo');
         $autor = $request->input('autor');
@@ -15,7 +15,7 @@ class Libreria extends Controller
             'autor' => $autor
         ], 200);
     }
-    public function guardar(Request $request)
+    public function nuevoLibro(Request $request)
     {
         $titulo = $request->Json('titulo');
         $autor = $request->Json('autor');
@@ -24,7 +24,7 @@ class Libreria extends Controller
             'autor' => $autor
         ], 201);
     }
-    public function actualizar(Request $request)
+    public function actualizarTitulo(Request $request)
     {
         $id = $request->route('id');
         $titulo = $request->route('titulo');
@@ -33,9 +33,15 @@ class Libreria extends Controller
             'titulo' => $titulo
         ], 200);
     }
-    public function eliminar($id) {}
-    /* normal version
-    public function Mazivactualizacion(Request $request)
+    public function eliminarLibro(Request $request)
+    {
+        $id = $request->Json()->get('id');
+        return response()->Json([
+            'id' => $id
+        ], 200);
+    }
+    // normal version
+    public function DescuentoGeneroN(Request $request)
     {
         $id = $request->route('id');
         $genero = $request->route('genero');
@@ -46,9 +52,9 @@ class Libreria extends Controller
             'descuento' => $descuento
         ], 200);
     }
-*/
 
-    public function Mazivactualizacion(Request $request)
+
+    public function DescuentoGenero(Request $request)
     {
         $libros = $request->Json()->all();
 
