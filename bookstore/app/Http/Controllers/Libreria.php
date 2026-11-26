@@ -34,5 +34,24 @@ class Libreria extends Controller
         ], 200);
     }
     public function eliminar($id) {}
-    public function Mazivactualizacion(Request $request) {}
+    /* normal version
+    public function Mazivactualizacion(Request $request)
+    {
+        $id = $request->route('id');
+        $genero = $request->route('genero');
+        $descuento = $request->route('descuento');
+        return response()->Json([
+            'id' => $id,
+            'genero' => $genero,
+            'descuento' => $descuento
+        ], 200);
+    }
+*/
+
+    public function Mazivactualizacion(Request $request)
+    {
+        $libros = $request->Json()->all();
+
+        return response()->Json($libros, 200);
+    }
 }
